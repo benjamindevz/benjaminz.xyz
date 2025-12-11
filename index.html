@@ -153,24 +153,12 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(0px) translateX(0px);
-            }
-            20% {
-                transform: translateY(-10px) translateX(5px);
-            }
-            40% {
-                transform: translateY(-15px) translateX(0px);
-            }
-            60% {
-                transform: translateY(-10px) translateX(-5px);
-            }
-            80% {
-                transform: translateY(-5px) translateX(-3px);
-            }
-            100% {
-                transform: translateY(0px) translateX(0px);
-            }
+            0% { transform: translateY(0px) translateX(0px); }
+            20% { transform: translateY(-10px) translateX(5px); }
+            40% { transform: translateY(-15px) translateX(0px); }
+            60% { transform: translateY(-10px) translateX(-5px); }
+            80% { transform: translateY(-5px) translateX(-3px); }
+            100% { transform: translateY(0px) translateX(0px); }
         }
 
         @keyframes shimmer {
@@ -603,6 +591,19 @@ Ive worked on smaller projects for my friends but  want to be apart of somthing 
         </p>
     </section>
 
+    <!-- BACKGROUND MUSIC -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="Babydoll.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Unmute + start audio on first click anywhere
+        document.addEventListener("click", () => {
+            const music = document.getElementById("bgMusic");
+            music.volume = 0.8;
+            music.play().catch(() => {});
+        }, { once: true });
+    </script>
 
     <script>
         // Create falling B's animation - more B's (15 on screen)
